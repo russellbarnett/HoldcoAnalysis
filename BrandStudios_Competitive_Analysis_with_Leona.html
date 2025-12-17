@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brand Orchestration Platform Analysis | BrandStudios.AI</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
             --primary: #0A0F1E;
@@ -34,11 +30,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            max-width: 1600px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
+        .container { max-width: 1600px; margin: 0 auto; padding: 0 40px; }
 
         /* Hero Section */
         .hero {
@@ -60,10 +52,7 @@
             opacity: 0.3;
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
+        .hero-content { position: relative; z-index: 1; }
 
         .hero h1 {
             font-size: 64px;
@@ -88,15 +77,9 @@
             margin-bottom: 40px;
         }
 
-        .hero-stats {
-            display: flex;
-            gap: 60px;
-            margin-top: 40px;
-        }
+        .hero-stats { display: flex; gap: 60px; margin-top: 40px; }
 
-        .stat {
-            text-align: center;
-        }
+        .stat { text-align: center; }
 
         .stat-number {
             font-size: 48px;
@@ -114,9 +97,7 @@
         }
 
         /* Section Styles */
-        .section {
-            padding: 80px 0;
-        }
+        .section { padding: 80px 0; }
 
         .section-title {
             font-size: 48px;
@@ -136,18 +117,18 @@
         .comparison-table {
             background: white;
             border-radius: 16px;
-            overflow: auto;
+            overflow: hidden;
             box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
             margin-bottom: 40px;
         }
 
+        /* UPDATED: repeat(8, 1fr) */
         .table-header {
             display: grid;
-            grid-template-columns: 280px repeat(13, minmax(160px, 1fr));
+            grid-template-columns: 280px repeat(8, 1fr);
             gap: 1px;
             background: var(--divider);
             border-bottom: 2px solid var(--divider);
-            min-width: 1400px;
         }
 
         .header-cell {
@@ -172,22 +153,18 @@
             font-weight: 700;
         }
 
+        /* UPDATED: repeat(8, 1fr) */
         .dimension-row {
             display: grid;
-            grid-template-columns: 280px repeat(13, minmax(160px, 1fr));
+            grid-template-columns: 280px repeat(8, 1fr);
             gap: 1px;
             background: var(--divider);
             transition: all 0.3s ease;
-            min-width: 1400px;
         }
 
-        .dimension-row:hover {
-            background: var(--accent);
-        }
+        .dimension-row:hover { background: var(--accent); }
 
-        .dimension-row:hover .dimension-cell {
-            transform: translateX(4px);
-        }
+        .dimension-row:hover .dimension-cell { transform: translateX(4px); }
 
         .dimension-cell {
             background: var(--bg-card);
@@ -254,11 +231,7 @@
         .insight-card:nth-child(2) { border-left-color: var(--success); }
         .insight-card:nth-child(3) { border-left-color: var(--warning); }
 
-        .insight-icon {
-            font-size: 32px;
-            margin-bottom: 20px;
-            display: block;
-        }
+        .insight-icon { font-size: 32px; margin-bottom: 20px; display: block; }
 
         .insight-title {
             font-size: 24px;
@@ -289,16 +262,15 @@
             color: var(--primary);
         }
 
+        /* UPDATED: repeat(8, 1fr) */
         .bars-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            grid-template-columns: repeat(8, 1fr);
             gap: 24px;
             margin-top: 40px;
         }
 
-        .bar-wrapper {
-            text-align: center;
-        }
+        .bar-wrapper { text-align: center; }
 
         .bar-container {
             height: 300px;
@@ -323,10 +295,7 @@
             opacity: 1;
         }
 
-        .bar:hover {
-            opacity: 1;
-            transform: scaleY(1.05);
-        }
+        .bar:hover { opacity: 1; transform: scaleY(1.05); }
 
         .bar-score {
             position: absolute;
@@ -365,11 +334,7 @@
             font-weight: 600;
         }
 
-        .legend-dot {
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-        }
+        .legend-dot { width: 16px; height: 16px; border-radius: 50%; }
 
         /* Footer */
         .footer {
@@ -379,32 +344,16 @@
             text-align: center;
         }
 
-        .footer-brand {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .footer-tagline {
-            font-size: 18px;
-            opacity: 0.9;
-        }
+        .footer-brand { font-size: 28px; font-weight: 700; margin-bottom: 12px; }
+        .footer-tagline { font-size: 18px; opacity: 0.9; }
 
         /* Animations */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .dimension-row {
-            animation: fadeInUp 0.6s ease backwards;
-        }
+        .dimension-row { animation: fadeInUp 0.6s ease backwards; }
 
         .dimension-row:nth-child(1) { animation-delay: 0.1s; }
         .dimension-row:nth-child(2) { animation-delay: 0.15s; }
@@ -416,19 +365,16 @@
         .dimension-row:nth-child(8) { animation-delay: 0.45s; }
         .dimension-row:nth-child(9) { animation-delay: 0.5s; }
         .dimension-row:nth-child(10) { animation-delay: 0.55s; }
+        .dimension-row:nth-child(11) { animation-delay: 0.6s; }
 
         /* Responsive */
         @media (max-width: 1400px) {
-            .platform-cell {
-                padding: 24px 16px;
-                font-size: 12px;
-            }
+            .table-header, .dimension-row { grid-template-columns: 240px repeat(8, 1fr); }
+            .platform-cell { padding: 28px 16px; font-size: 12px; }
         }
 
         @media (max-width: 1200px) {
-            .bars-container {
-                grid-template-columns: repeat(3, 1fr);
-            }
+            .bars-container { grid-template-columns: repeat(4, 1fr); }
         }
 
         @media (max-width: 768px) {
@@ -437,6 +383,8 @@
             .bars-container { grid-template-columns: 1fr; gap: 20px; }
             .bar-container { height: 200px; }
             .insights-grid { grid-template-columns: 1fr; }
+            .table-header, .dimension-row { display: block; }
+            .platform-cell, .dimension-cell { border-bottom: 1px solid var(--divider); }
         }
     </style>
 </head>
@@ -449,18 +397,18 @@
                 <h1>BRAND ORCHESTRATION<br>PLATFORM ANALYSIS</h1>
                 <div class="hero-subtitle">Competitive Intelligence Report</div>
                 <p class="hero-description">
-                    Unlike holdco stacks that automate process, BrandStudios.AI connects human intelligence 
-                    and automation to protect brand fidelity at scale. This analysis examines how leading 
-                    marketing orchestration platforms approach AI, automation, and creative intelligence—including 
-                    Publicis' Leona agentic AI content engine and the full global holdco landscape.
+                    Unlike holdco stacks that automate process, BrandStudios.AI connects human intelligence
+                    and automation to protect brand fidelity at scale. This analysis examines how leading
+                    marketing orchestration platforms approach AI, automation, and creative intelligence—including
+                    Publicis' newly launched Leona agentic AI content engine.
                 </p>
                 <div class="hero-stats">
                     <div class="stat">
-                        <span class="stat-number">13</span>
+                        <span class="stat-number">8</span>
                         <span class="stat-label">Platforms Analyzed</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-number">10</span>
+                        <span class="stat-number">11</span>
                         <span class="stat-label">Capability Dimensions</span>
                     </div>
                     <div class="stat">
@@ -477,9 +425,8 @@
         <div class="container">
             <h2 class="section-title">Comprehensive Capability Comparison</h2>
             <p class="section-subtitle">
-                A detailed analysis across 10 critical dimensions that define modern brand orchestration platforms, 
-                from AI approach and brand memory to connectivity and creative intelligence—now including all major 
-                global holdcos alongside BrandStudios.AI.
+                A detailed analysis across 11 critical dimensions that define modern brand orchestration platforms,
+                from AI approach and brand memory to connectivity and creative intelligence.
             </p>
 
             <div class="comparison-table">
@@ -487,326 +434,215 @@
                     <div class="header-cell">Capability Dimension</div>
                     <div class="header-cell brand-studios">BrandStudios.AI</div>
                     <div class="header-cell">WPP Open</div>
-                    <div class="header-cell">Accenture Song</div>
-                    <div class="header-cell">Publicis Marcel</div>
-                    <div class="header-cell">Publicis Leona</div>
+                    <div class="header-cell">Publicis (Marcel + Leona)</div>
                     <div class="header-cell">Omnicom Omni</div>
                     <div class="header-cell">IPG Interact</div>
                     <div class="header-cell">Dentsu AI Playground</div>
                     <div class="header-cell">Havas Converged OS</div>
-                    <div class="header-cell">Hakuhodo DY / e-Genie</div>
-                    <div class="header-cell">Stagwell Marketing Cloud</div>
-                    <div class="header-cell">BlueFocus / Blue AI</div>
-                    <div class="header-cell">Innocean AI Alliance</div>
+                    <div class="header-cell">Stagwell (Network + Tools)</div>
                 </div>
 
                 <!-- Core Model -->
                 <div class="dimension-row">
-                    <div class="dimension-cell">
-                        <div class="dimension-label">Core Model</div>
-                    </div>
+                    <div class="dimension-cell"><div class="dimension-label">Core Model</div></div>
+
                     <div class="platform-cell brand-studios">
                         <span class="capability-badge capability-full">●</span>
                         <strong>Human-intelligence creative platform</strong> connecting brand, workflow, and performance. Open by design, built for makers.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
-                        Central marketing OS linking creative, media, and commerce inside WPP.
+                        Central marketing OS linking creative, media, and commerce inside WPP’s ecosystem.
+                    </div>
+                    <div class="platform-cell">
+                        <span class="capability-badge capability-partial">●</span>
+                        Marcel as internal collaboration OS plus Leona as agentic content engine tied to Epsilon, CoreAI, and production network.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-limited">○</span>
-                        Consulting-led transformation model dependent on enterprise clients.
+                        Audience and analytics system that orchestrates media and messaging from a closed identity spine.
+                    </div>
+                    <div class="platform-cell">
+                        <span class="capability-badge capability-partial">●</span>
+                        Interact as integrated data, media, creative and production layer with real-time decisioning built around Adobe and IPG stack.
+                    </div>
+                    <div class="platform-cell">
+                        <span class="capability-badge capability-partial">●</span>
+                        Integrated media and creative platform anchored in AI Playground, Navegg, and Adobe GenStudio for scaled marketing delivery.
+                    </div>
+                    <div class="platform-cell">
+                        <span class="capability-badge capability-partial">●</span>
+                        Converged OS that unifies media, creative, and production into a single AI-augmented operating environment.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-limited">○</span>
-                        Internal collaboration platform focused on internal efficiency.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-partial">●</span>
-                        End-to-end agentic AI content engine powered by identity data and production network.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-limited">○</span>
-                        Audience and analytics system closed to external networks.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-partial">●</span>
-                        Integrated media, data, and creative platform unifying IPG agencies and Adobe-powered production.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-partial">●</span>
-                        Experience and commerce platform tying Dentsu data assets and AI tools into one marketing fabric.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-partial">●</span>
-                        Converged OS blending creative, media, and content production in a single stack for Havas Village clients.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-partial">●</span>
-                        Omni-channel activation and marketplace optimisation layer focused on retail and quick commerce brands.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-partial">●</span>
-                        Modular marketing cloud combining research, media, and content tools in one SaaS-like environment.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-partial">●</span>
-                        AI-first marketing technology platform re-positioning BlueFocus as a product-led business, not just an agency network.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-limited">○</span>
-                        Network-wide AI transformation program aligned to Hyundai/Kia and global clients, not a single unified OS yet.
+                        Challenger network model with agency-level tools and partners. No single unified orchestration OS across the group.
                     </div>
                 </div>
 
                 <!-- AI Approach -->
                 <div class="dimension-row">
-                    <div class="dimension-cell">
-                        <div class="dimension-label">AI Approach</div>
-                    </div>
+                    <div class="dimension-cell"><div class="dimension-label">AI Approach</div></div>
+
                     <div class="platform-cell brand-studios">
                         <span class="capability-badge capability-full">●</span>
                         <strong>Human-in-the-loop learning</strong> that strengthens with every use while keeping authorship human.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
-                        Workflow automation for process efficiency and scaled production across WPP assets.
+                        Workflow and production automation focused on efficiency across the WPP network.
+                    </div>
+                    <div class="platform-cell">
+                        <span class="capability-badge capability-partial">●</span>
+                        Agentic AI plus collaboration AI: conversational interface with specialist agents working across CoreAI and Epsilon data.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-limited">○</span>
-                        Automation delivered through consulting engagements, not embedded in daily creative workflows.
+                        Optimization AI for planning, targeting, and measurement; creative treated as an input variable.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
-                        Collaboration AI supporting project routing, staffing, and internal knowledge search more than creative exploration.
+                        Gen-AI woven into Interact to accelerate planning and production, oriented around transformation and efficiency.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
-                        Agentic AI with specialist agents for content production. Conversational interface but performance-driven, not creative-learning-first.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-limited">○</span>
-                        Optimization AI focused on audiences, identity, and media, not creativity or brand truth.
+                        Azure OpenAI plus proprietary models enabling AI copilots across media, CXM, and creative workflows.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
-                        AI decisioning around audiences, channels, and content mix with Adobe GenAI woven into execution layers.
+                        AI embedded into video production (Vermeer) and perception tools to understand how brands surface inside AI platforms.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
-                        Azure/OpenAI and proprietary models (Nawel, Navegg) to automate planning and personalization at scale.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-partial">●</span>
-                        Suite of AI tools for production, video generation, and perception analysis across big platforms and LLMs.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-partial">●</span>
-                        Agentic flows and AI optimisation inside commerce and performance channels; experimentation-heavy approach.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-full">●</span>
-                        Integrated AI assistants and agents inside SaaS tools, built to be used directly by marketers and strategists.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-full">●</span>
-                        “All in AI” positioning with internal tools and vertical models; AI mandated across teams and workflows.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-partial">●</span>
-                        Alliance-based AI approach with multiple partners; AI used for prediction, targeting, and content support.
+                        AI is deployed through agency teams and partner tooling. Practical enablement, but not governed by a single group-wide learning system.
                     </div>
                 </div>
 
                 <!-- Brand Memory -->
                 <div class="dimension-row">
-                    <div class="dimension-cell">
-                        <div class="dimension-label">Brand Memory & Identity Learning</div>
-                    </div>
+                    <div class="dimension-cell"><div class="dimension-label">Brand Memory & Identity Learning</div></div>
+
                     <div class="platform-cell brand-studios">
                         <span class="capability-badge capability-full">●</span>
                         <strong>Brand Memory learns tone, design, and behavior</strong> from every campaign so brands stay consistent and alive.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-limited">○</span>
-                        Template governance without true identity learning beyond guidelines and playbooks.
+                        Template and guideline governance; limited creative learning beyond rules and assets.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-limited">○</span>
-                        Process frameworks define compliance and ops, not living brand behavior or voice.
+                        Asset systems and performance tagging without a dedicated, evolving model of brand voice and identity.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-limited">○</span>
-                        Asset systems focused on control and access, not evolution of the brand’s creative language.
+                        Audience and channel memory, but no explicit creative memory model for brand craft and tone.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-limited">○</span>
-                        Asset tagging with performance attributes but no creative memory or identity learning. Data-first, not brand-first.
+                        Frameworks and playbooks define identity; learning sits in teams and decks, not in the platform itself.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-limited">○</span>
-                        Audience-first logic; creative treated as interchangeable unit in service of media and reach.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-partial">●</span>
-                        Some pattern learning via Adobe GenStudio and data hubs, but primarily performance and funnel-based, not brand DNA-based.
+                        Campaign learnings are mainly performance- and audience-driven; brand nuance remains manual.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-limited">○</span>
-                        Taxonomies around audiences and channels; limited persistent learning of tone or visual codes.
+                        Strong governance and brand control, but learning loops focused on compliance and consistency, not evolution.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-limited">○</span>
-                        Governance and consistency via templates and networks, not a central evolving brand brain.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-limited">○</span>
-                        e-Genie and related tools optimise campaigns, not store a durable, learning brand identity model.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-partial">●</span>
-                        Strong first-party research and insight data but no single, learning brand memory layer across tools yet.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-partial">●</span>
-                        Internal AI widely adopted with growing brand-specific fine-tuning, but still early as a formalized “brand memory” system.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-limited">○</span>
-                        Brand guidelines and playbooks enforced through partners and tech; memory is human, not systemized.
+                        Brand learning is primarily human-held inside specialist teams. No persistent system-level “brand memory” across the network.
                     </div>
                 </div>
 
                 <!-- Automation Depth -->
                 <div class="dimension-row">
-                    <div class="dimension-cell">
-                        <div class="dimension-label">Automation Depth</div>
-                    </div>
+                    <div class="dimension-cell"><div class="dimension-label">Automation Depth</div></div>
+
                     <div class="platform-cell brand-studios">
                         <span class="capability-badge capability-full">●</span>
                         <strong>Adaptive automation</strong> that learns from creative judgment and removes repetition without losing control.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
-                        High but rigid, built for scale and throughput over nuance in creative decisions.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-partial">●</span>
-                        Medium-high; automation surfaced through transformation projects, not as everyday product features.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-partial">●</span>
-                        Medium, task automation and routing more than deep creative flows.
+                        High automation in production and workflow, tuned for throughput over nuance.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-full">●</span>
-                        Very high automation depth across 52 locations, 6,000 production experts for scaled content at speed.
+                        Very deep automation across 52 locations and thousands of specialists, tuned to “cheaper, better, faster” content at scale.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
-                        Deep in audience planning and reporting; lighter in creative origination and craft control.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-full">●</span>
-                        High automation across content creation, versioning, and activation via Adobe GenStudio and IPG production hubs.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-full">●</span>
-                        Significant automation for media, CXM, and content workflows through shared AI infrastructure and partners.
+                        Strong in planning, activation, and measurement automation; creative remains loosely coupled to the engine.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
-                        Growing automation for localisation, versioning, and production through Vermeer and related tools.
+                        Medium-high automation as part of transformation programs; depth often depends on client implementation.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
-                        Strong in media and commerce optimisation; creative automation still in development across markets.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-full">●</span>
-                        High automation embedded in SaaS products (research, media, content), designed for self-serve usage.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-full">●</span>
-                        Extensive use of AI for asset generation, translation, and distribution with aggressive productivity targets.
+                        High automation across media, data, and CX; creative automation emerging, focused on volume and speed.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
-                        Medium automation, concentrated in media and production partners rather than a single OS.
+                        Automation concentrated in production and trafficking; creative origination still highly human and decentralized.
+                    </div>
+                    <div class="platform-cell">
+                        <span class="capability-badge capability-partial">●</span>
+                        Automation varies by agency and client stack. Strong execution tooling in pockets, not a standardized automation layer across the network.
                     </div>
                 </div>
 
                 <!-- Creative Intelligence -->
                 <div class="dimension-row">
-                    <div class="dimension-cell">
-                        <div class="dimension-label">Creative Intelligence</div>
-                    </div>
+                    <div class="dimension-cell"><div class="dimension-label">Creative Intelligence</div></div>
+
                     <div class="platform-cell brand-studios">
                         <span class="capability-badge capability-full">●</span>
                         <strong>Connects creative decisions to performance and learning.</strong> Tracks how tone, craft, and design influence response so the system grows smarter with every campaign.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-limited">○</span>
-                        Procedural automation focused on output volume and efficiency, not creative nuance.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-limited">○</span>
-                        Creativity filtered through business-process metrics and transformation KPIs.
+                        Procedural and operational intelligence; creative quality measured indirectly via delivery and results.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
-                        Productivity and resource-based intelligence; some visibility into creative workflows but not creative impact.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-partial">●</span>
-                        Connected Performance tracking attributes that work but treating creative as a variable to optimize, not protect.
+                        Connected Performance tracks what attributes perform, but creative is still a variable to optimize, not a truth to protect.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-limited">○</span>
-                        Data and attribution logic dominate; creative quality is inferred, not directly measured or learned.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-partial">●</span>
-                        Funnel and channel intelligence, with some linkage between content patterns and outcomes but still media-first.
+                        Intelligence centered on audiences, reach, and attribution; creative treated as interchangeable input.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-limited">○</span>
-                        AI used to optimize targeting and journeys; creative insight is secondary to performance metrics.
+                        Business and transformation metrics dominate; creative intelligence surfaces through consulting rather than platform logic.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
-                        Perception and platform intelligence emerging via AI tools that scan how brands show up across LLMs and platforms.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-limited">○</span>
-                        Optimisation logic around marketplace and retail KPIs, not creative craft or narrative strength.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-full">●</span>
-                        Strong marketing intelligence baked into research and media tools, with increasing linkage to creative variants and messaging.
+                        Emerging creative analytics and AI-assisted content decisions linked to media and CX data.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
-                        Extensive operational metrics and content performance tracking; creative quality signals are emerging but not central yet.
+                        Portfolio of tools beginning to link creative elements to outcomes, but primarily through the lens of media and perception.
                     </div>
                     <div class="platform-cell">
-                        <span class="capability-badge capability-limited">○</span>
-                        Intelligence focused on channel and performance outputs; creative choices remain largely manual.
+                        <span class="capability-badge capability-partial">●</span>
+                        Creative intelligence is delivered through teams and measurement partners. Less “system learning,” more “expert interpretation.”
                     </div>
                 </div>
 
                 <!-- Connectivity -->
                 <div class="dimension-row">
-                    <div class="dimension-cell">
-                        <div class="dimension-label">Connectivity & Security</div>
-                    </div>
+                    <div class="dimension-cell"><div class="dimension-label">Connectivity & Security</div></div>
+
                     <div class="platform-cell brand-studios">
                         <span class="capability-badge capability-full">●</span>
                         <strong>Native MCP connectivity</strong> with no third-party plugins. Direct to CRM, CMS, DAM, and analytics. Full enterprise controls (RBAC, MFA, audit, data residency).
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
-                        Primarily internal WPP stack with limited external access and enterprise-heavy integration paths.
+                        Deep integration inside WPP stack and key partners; limited openness beyond preferred ecosystem.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
@@ -822,255 +658,205 @@
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
-                        Integrations through global martech and adtech stacks; security modeled on enterprise clients and platforms.
+                        Robust security and connectivity via cloud partners and Dentsu’s own data platforms; still more agency-centric than client-centric.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
-                        Havas Village architecture offers shared data and systems; connectivity shaped by Vivendi ecosystem too.
+                        Integrated across Havas Village stack and select external tools; secure but strongly tied to Havas ecosystem.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
-                        Integrations focused on commerce, marketplaces, and Japanese enterprise partners; less open as a universal OS.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-full">●</span>
-                        SaaS architecture with APIs into major martech and adtech stacks, with strong security posture for US and EU clients.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-partial">●</span>
-                        Deep integration with Chinese platforms and ecosystems; global stack connectivity varies by market.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-partial">●</span>
-                        Alliance gives multiple tech paths; security and connectivity depend on partner mix per client.
+                        Connectivity depends on client stack + partner tools. Security posture varies by deployment; no single standardized “platform security model.”
                     </div>
                 </div>
 
                 <!-- Speed & Agility -->
                 <div class="dimension-row">
-                    <div class="dimension-cell">
-                        <div class="dimension-label">Speed & Agility</div>
-                    </div>
+                    <div class="dimension-cell"><div class="dimension-label">Speed & Agility</div></div>
+
                     <div class="platform-cell brand-studios">
                         <span class="capability-badge capability-full">●</span>
                         <strong>Real-time adaptability</strong> that shortens production cycles and maintains craft.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
-                        Moderate due to network complexity and internal coordination requirements.
+                        High potential speed, but slowed by network size and internal routing.
+                    </div>
+                    <div class="platform-cell">
+                        <span class="capability-badge capability-full">●</span>
+                        High-speed, follow-the-sun production geared for always-on content and localization at scale.
+                    </div>
+                    <div class="platform-cell">
+                        <span class="capability-badge capability-partial">●</span>
+                        Fast for media and audience optimization; creative changes move at the pace of teams and approvals.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-limited">○</span>
-                        Slow multi-phase consulting cycles and transformation roadmaps.
+                        Transformation cycles and enterprise integration often extend timelines despite strong tooling.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
-                        Moderate, slowed by internal routing and governance layers.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-full">●</span>
-                        High-speed production across global studios and always-on content hubs for clients in the network.
+                        High speed in performance channels; mixed speed when multiple practices and geographies are involved.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
-                        Moderate; strong in planning, slower in creative execution changes due to platform constraints.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-full">●</span>
-                        Fast execution once set up, leveraging centralized production and AI-assisted workflows.
+                        Good operational speed, with variability based on local teams and shared services.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
-                        Variable by region and solution; strong media speed, uneven creative agility.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-partial">●</span>
-                        Good responsiveness via integrated village model, but still subject to holdco layers.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-partial">●</span>
-                        Strong campaign agility in commerce and retail; slower when spanning multiple business units.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-full">●</span>
-                        Built for speed with self-serve and light-service models; minimal friction once onboarded.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-full">●</span>
-                        Very high, with internal AI standardization driving fast asset creation and localization.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-partial">●</span>
-                        Improving speed through alliances; still dependent on partner delivery models and client governance.
+                        Fast when the right specialist team is assembled. Speed comes from people and coordination, not from a single orchestration layer.
                     </div>
                 </div>
 
                 <!-- Human Governance -->
                 <div class="dimension-row">
-                    <div class="dimension-cell">
-                        <div class="dimension-label">Human Governance</div>
-                    </div>
+                    <div class="dimension-cell"><div class="dimension-label">Human Governance</div></div>
+
                     <div class="platform-cell brand-studios">
                         <span class="capability-badge capability-full">●</span>
                         <strong>People lead, AI supports.</strong> Creative direction stays in human hands.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
-                        Oversight maintained, but automation drives much of workflow and production decisioning.
+                        Governance layered over automated workflows; people manage exceptions and approvals.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-limited">○</span>
-                        Process-led governance, with creative often downstream of transformation frameworks and procurement.
+                        100 years of craft cited, but Leona’s agents generate content with humans supervising more than directing.
+                    </div>
+                    <div class="platform-cell">
+                        <span class="capability-badge capability-limited">○</span>
+                        Analytics-driven culture where decisions increasingly follow models and dashboards over creative instinct.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
-                        Collaboration governance within workflow; strong but focused on resource and routing rather than creative calls.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-limited">○</span>
-                        100 years of craft expertise claimed but automation-first model positions AI agents to generate brand content with human supervision, not direction.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-limited">○</span>
-                        Governance rooted in data, compliance, and CX metrics rather than creative direction quality.
+                        Governance anchored in process and accountability frameworks; creative judgment sits outside the platform.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
-                        Human leadership in agencies with AI augmenting, but OS direction is still performance-driven.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-limited">○</span>
-                        Governance sits in media and commerce leadership, not brand guardianship per se.
+                        Clear human oversight on data, ethics, and media; creative governance varies by client and market.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
-                        Human-led strategy with AI copilots; governance varies by tool and operating model, not unified.
+                        Strong on policy and brand control; creative governance exercised through committees and leadership, not systems.
                     </div>
                     <div class="platform-cell">
-                        <span class="capability-badge capability-partial">●</span>
-                        Strong cultural push for AI adoption, but human creative leads still set standards in key accounts.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-limited">○</span>
-                        Human governance sits mostly within client and partner teams, not encoded in a single platform.
+                        <span class="capability-badge capability-full">●</span>
+                        Human governance is the model—directed through teams, not enforced through a unified platform. Strong people layer, weaker system layer.
                     </div>
                 </div>
 
                 <!-- Learning Loop -->
                 <div class="dimension-row">
-                    <div class="dimension-cell">
-                        <div class="dimension-label">Learning Loop & Feedback</div>
-                    </div>
+                    <div class="dimension-cell"><div class="dimension-label">Learning Loop & Feedback</div></div>
+
                     <div class="platform-cell brand-studios">
                         <span class="capability-badge capability-full">●</span>
                         <strong>The system learns why something is approved or rejected,</strong> refining its sense of brand truth with each decision.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
-                        Reporting and dashboards, limited learning from creative decisions themselves.
+                        Reporting-driven improvement with limited tight feedback from human creative judgment into the system itself.
+                    </div>
+                    <div class="platform-cell">
+                        <span class="capability-badge capability-partial">●</span>
+                        Performance-led learning from Connected Performance and identity data; learns what works, not why humans chose it.
+                    </div>
+                    <div class="platform-cell">
+                        <span class="capability-badge capability-partial">●</span>
+                        Continuous learning about audiences and channels; creative optimization inferred rather than explicitly modeled.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-limited">○</span>
-                        Periodic consulting reviews, no continuous product-level learning loop tied to assets and decisions.
+                        Periodic review cycles and consulting-led insights instead of a live, embedded feedback loop for creative.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
-                        Partial learning from collaboration and workflow data, not from creative approvals or rejections.
+                        Feedback loops centered on media and CX performance; creative learnings enter via teams and playbooks.
                     </div>
                     <div class="platform-cell">
-                        <span class="capability-badge capability-partial">●</span>
-                        Performance feedback loop from Connected Performance attributes, learning what performs, not why humans approve.
+                        <span class="capability-badge capability-limited">○</span>
+                        Learning captured in studies and dashboards more than in a continuously adapting creative system.
                     </div>
                     <div class="platform-cell">
-                        <span class="capability-badge capability-partial">●</span>
-                        Audience and attribution learning is strong; creative feedback loop remains indirect.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-partial">●</span>
-                        Integrated testing and performance insights, but learning primarily at media and funnel level.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-partial">●</span>
-                        Feedback loops across CX and media; creative learning is more anecdotal than systemized.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-partial">●</span>
-                        Emerging AI tools to read platform behavior and feed insights into strategy, but loops are still manual.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-partial">●</span>
-                        Campaign outcomes feed into optimisation models, but do not yet refine a central creative model.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-full">●</span>
-                        Strong experimentation culture; many tools include built-in test-and-learn for messaging and creative variants.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-full">●</span>
-                        Aggressive feedback loops, with AI actively retrained based on performance and operational outcomes across thousands of campaigns.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-partial">●</span>
-                        Learning is distributed across partners and markets; no single feedback brain, but plenty of local loops.
+                        <span class="capability-badge capability-limited">○</span>
+                        Learning lives in teams and casework. Not a continuously compounding system loop across the network.
                     </div>
                 </div>
 
                 <!-- Output Consistency -->
                 <div class="dimension-row">
-                    <div class="dimension-cell">
-                        <div class="dimension-label">Output Consistency</div>
-                    </div>
+                    <div class="dimension-cell"><div class="dimension-label">Output Consistency</div></div>
+
                     <div class="platform-cell brand-studios">
                         <span class="capability-badge capability-full">●</span>
                         <strong>High and identity-safe</strong> across all markets with freedom for local storytelling.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-full">●</span>
-                        High through standardized templates and global production frameworks.
+                        High consistency through templates, governance, and centralized services.
+                    </div>
+                    <div class="platform-cell">
+                        <span class="capability-badge capability-full">●</span>
+                        Very high global consistency via 52 locations, 13,000 linguists, and standardized production pipelines.
+                    </div>
+                    <div class="platform-cell">
+                        <span class="capability-badge capability-full">●</span>
+                        High, driven by audience rules and activation logic, with creative slotted into known patterns.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
-                        High via managed process control and governance, but creative quality varies by implementation team.
+                        Strong where IPG runs end-to-end; more variable when multiple partners and systems are involved.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
-                        Medium, depends on local Marcel adoption and team discipline.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-full">●</span>
-                        Very high consistency across 52 global locations, 13,000 linguists covering 200 markets. Localization at scale but performance-driven consistency.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-full">●</span>
-                        High through targeting and audience automation across Omnicom stack.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-full">●</span>
-                        Strong consistency via centralized production hubs and shared templates across IPG.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-full">●</span>
-                        High consistency driven by shared tools and global playbooks, especially in media and CXM.
+                        Good consistency in key global accounts; local adaptation can create drift without strong oversight.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
-                        Good but uneven; varies by Havas Village and market maturity with the converged OS.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-full">●</span>
-                        High for commerce and omni-channel assets using e-Genie; less uniform across brand storytelling.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-full">●</span>
-                        High for brands building on standard tools, with consistent templates and measurement frameworks.
-                    </div>
-                    <div class="platform-cell">
-                        <span class="capability-badge capability-full">●</span>
-                        Very high internal consistency due to AI mandate and platformisation, especially in content-heavy verticals.
+                        High within integrated Havas Village teams; more uneven at the edges of the network.
                     </div>
                     <div class="platform-cell">
                         <span class="capability-badge capability-partial">●</span>
-                        Consistency improving as AI Alliance matures, but still fragmented across partners and markets.
+                        Consistency depends on who’s running it. Strong outputs from strong teams; less system-enforced uniformity at scale.
+                    </div>
+                </div>
+
+                <!-- Value Proposition -->
+                <div class="dimension-row">
+                    <div class="dimension-cell"><div class="dimension-label">Value Proposition</div></div>
+
+                    <div class="platform-cell brand-studios">
+                        <span class="capability-badge capability-full">●</span>
+                        <strong>Platform-agnostic creative intelligence powered by human insight.</strong> Protects identity, accelerates delivery, connects data to craft, and measures creative performance.
+                    </div>
+                    <div class="platform-cell">
+                        <span class="capability-badge capability-partial">●</span>
+                        Efficiency and scale through an integrated WPP operating system for marketing and commerce.
+                    </div>
+                    <div class="platform-cell">
+                        <span class="capability-badge capability-partial">●</span>
+                        “Predictively performing content” by connecting identity, performance, and production across the Publicis stack.
+                    </div>
+                    <div class="platform-cell">
+                        <span class="capability-badge capability-limited">○</span>
+                        Audience optimization and closed-loop attribution inside Omnicom’s data and media environment.
+                    </div>
+                    <div class="platform-cell">
+                        <span class="capability-badge capability-limited">○</span>
+                        Transformation partner that unifies data and content, with creativity framed as part of broader change programs.
+                    </div>
+                    <div class="platform-cell">
+                        <span class="capability-badge capability-partial">●</span>
+                        AI-enhanced marketing outcomes across media, CXM, and creative, built on Dentsu’s proprietary and partner tech.
+                    </div>
+                    <div class="platform-cell">
+                        <span class="capability-badge capability-partial">●</span>
+                        Integrated, AI-supported media and creative that aims to simplify complexity across the Havas Village ecosystem.
+                    </div>
+                    <div class="platform-cell">
+                        <span class="capability-badge capability-partial">●</span>
+                        Challenger network advantage: specialist teams + flexible toolchain. Wins through capability and speed, not a unified orchestration platform.
                     </div>
                 </div>
             </div>
@@ -1099,10 +885,10 @@
             <div class="score-chart">
                 <h3 class="chart-title">Overall Platform Capability Score</h3>
                 <p class="section-subtitle" style="margin-bottom: 0;">
-                    Aggregated scores across all 10 capability dimensions, showing the comprehensive advantage 
+                    Aggregated scores across all 11 capability dimensions, showing the comprehensive advantage
                     of human-led creative intelligence over process automation and data-driven content generation.
                 </p>
-                
+
                 <div class="bars-container">
                     <div class="bar-wrapper">
                         <div class="bar-container">
@@ -1112,33 +898,6 @@
                         </div>
                         <div class="bar-label">BrandStudios.AI</div>
                     </div>
-                    
-                    <div class="bar-wrapper">
-                        <div class="bar-container">
-                            <div class="bar" style="height: 55%;">
-                                <div class="bar-score">11/20</div>
-                            </div>
-                        </div>
-                        <div class="bar-label">WPP Open</div>
-                    </div>
-                    
-                    <div class="bar-wrapper">
-                        <div class="bar-container">
-                            <div class="bar" style="height: 20%;">
-                                <div class="bar-score">4/20</div>
-                            </div>
-                        </div>
-                        <div class="bar-label">Accenture Song</div>
-                    </div>
-                    
-                    <div class="bar-wrapper">
-                        <div class="bar-container">
-                            <div class="bar" style="height: 50%;">
-                                <div class="bar-score">10/20</div>
-                            </div>
-                        </div>
-                        <div class="bar-label">Publicis Marcel</div>
-                    </div>
 
                     <div class="bar-wrapper">
                         <div class="bar-container">
@@ -1146,13 +905,22 @@
                                 <div class="bar-score">12/20</div>
                             </div>
                         </div>
-                        <div class="bar-label">Publicis Leona</div>
+                        <div class="bar-label">WPP Open</div>
                     </div>
-                    
+
                     <div class="bar-wrapper">
                         <div class="bar-container">
-                            <div class="bar" style="height: 25%;">
-                                <div class="bar-score">5/20</div>
+                            <div class="bar" style="height: 65%;">
+                                <div class="bar-score">13/20</div>
+                            </div>
+                        </div>
+                        <div class="bar-label">Publicis (Marcel + Leona)</div>
+                    </div>
+
+                    <div class="bar-wrapper">
+                        <div class="bar-container">
+                            <div class="bar" style="height: 50%;">
+                                <div class="bar-score">10/20</div>
                             </div>
                         </div>
                         <div class="bar-label">Omnicom Omni</div>
@@ -1169,29 +937,11 @@
 
                     <div class="bar-wrapper">
                         <div class="bar-container">
-                            <div class="bar" style="height: 50%;">
-                                <div class="bar-score">10/20</div>
+                            <div class="bar" style="height: 55%;">
+                                <div class="bar-score">11/20</div>
                             </div>
                         </div>
                         <div class="bar-label">Dentsu AI Playground</div>
-                    </div>
-
-                    <div class="bar-wrapper">
-                        <div class="bar-container">
-                            <div class="bar" style="height: 40%;">
-                                <div class="bar-score">8/20</div>
-                            </div>
-                        </div>
-                        <div class="bar-label">Havas Converged OS</div>
-                    </div>
-
-                    <div class="bar-wrapper">
-                        <div class="bar-container">
-                            <div class="bar" style="height: 35%;">
-                                <div class="bar-score">7/20</div>
-                            </div>
-                        </div>
-                        <div class="bar-label">Hakuhodo DY / e-Genie</div>
                     </div>
 
                     <div class="bar-wrapper">
@@ -1200,25 +950,17 @@
                                 <div class="bar-score">9/20</div>
                             </div>
                         </div>
-                        <div class="bar-label">Stagwell Marketing Cloud</div>
+                        <div class="bar-label">Havas Converged OS</div>
                     </div>
 
+                    <!-- NEW: Stagwell -->
                     <div class="bar-wrapper">
                         <div class="bar-container">
                             <div class="bar" style="height: 40%;">
                                 <div class="bar-score">8/20</div>
                             </div>
                         </div>
-                        <div class="bar-label">BlueFocus / Blue AI</div>
-                    </div>
-
-                    <div class="bar-wrapper">
-                        <div class="bar-container">
-                            <div class="bar" style="height: 30%;">
-                                <div class="bar-score">6/20</div>
-                            </div>
-                        </div>
-                        <div class="bar-label">Innocean AI Alliance</div>
+                        <div class="bar-label">Stagwell</div>
                     </div>
                 </div>
             </div>
@@ -1230,9 +972,8 @@
         <div class="container">
             <h2 class="section-title">Strategic Differentiators vs. Publicis Leona</h2>
             <p class="section-subtitle">
-                Publicis Leona represents the most sophisticated data-driven content automation yet launched by a holdco. 
-                Here's how BrandStudios.AI's human-led approach fundamentally differs from Leona's agentic AI content engine—
-                and, by extension, from the broader holdco AI model.
+                Publicis Leona represents the most sophisticated data-driven content automation yet launched by a holdco.
+                Here's how BrandStudios.AI's human-led approach fundamentally differs from Leona's agentic AI content engine.
             </p>
 
             <div class="insights-grid">
@@ -1240,9 +981,9 @@
                     <span class="insight-icon" style="color: var(--accent);">◆</span>
                     <h3 class="insight-title">Brand Truth vs. Performance Optimization</h3>
                     <p class="insight-description">
-                        Leona's "Connected Performance" learns what attributes drive results, optimizing creative as a variable 
-                        to test and iterate. BrandStudios.AI's Brand Memory learns why humans approve or reject decisions, 
-                        protecting brand identity while enabling performance. We don't treat creative as input to optimize—we 
+                        Leona's "Connected Performance" learns what attributes drive results, optimizing creative as a variable
+                        to test and iterate. BrandStudios.AI's Brand Memory learns why humans approve or reject decisions,
+                        protecting brand identity while enabling performance. We don't treat creative as input to optimize—we
                         treat it as truth to protect.
                     </p>
                 </div>
@@ -1251,9 +992,9 @@
                     <span class="insight-icon" style="color: var(--success);">◆</span>
                     <h3 class="insight-title">Human Direction vs. Human Supervision</h3>
                     <p class="insight-description">
-                        Leona positions AI agents to generate content with human oversight ("conversational interface with 
-                        specialist AI agents working in the background"). BrandStudios.AI keeps creative direction in human 
-                        hands, with AI learning from judgment, not replacing it. The difference: humans leading intelligence 
+                        Leona positions AI agents to generate content with human oversight ("conversational interface with
+                        specialist AI agents working in the background"). BrandStudios.AI keeps creative direction in human
+                        hands, with AI learning from judgment, not replacing it. The difference: humans leading intelligence
                         vs. humans supervising automation.
                     </p>
                 </div>
@@ -1262,10 +1003,10 @@
                     <span class="insight-icon" style="color: var(--warning);">◆</span>
                     <h3 class="insight-title">Platform Agnostic vs. Ecosystem Dependent</h3>
                     <p class="insight-description">
-                        Leona requires the full Publicis stack: CoreAI, Epsilon identity data, global production, Adobe Firefly, 
-                        and connected media. It's powerful but locked in. BrandStudios.AI connects via native MCP to any CRM, CMS, 
-                        DAM, or analytics platform—delivering creative intelligence without ecosystem dependency or vendor lock-in. 
-                        That same independence applies when we sit alongside any holdco or in-house studio.
+                        Leona requires the full Publicis stack: CoreAI, Epsilon identity data (2.3B profiles), 52-location
+                        production network, Adobe Firefly integration. It's powerful but locked in. BrandStudios.AI connects
+                        via native MCP to any CRM, CMS, DAM, or analytics platform—delivering creative intelligence without
+                        ecosystem dependency or vendor lock-in.
                     </p>
                 </div>
             </div>
@@ -1282,37 +1023,28 @@
 
     <script>
         // Animate bars on scroll
-        const observerOptions = {
-            threshold: 0.3,
-            rootMargin: '0px 0px -100px 0px'
-        };
+        const observerOptions = { threshold: 0.3, rootMargin: '0px 0px -100px 0px' };
 
         const barObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const bars = entry.target.querySelectorAll('.bar');
                     bars.forEach((bar, index) => {
-                        setTimeout(() => {
-                            bar.style.transform = 'scaleY(1)';
-                        }, index * 100);
+                        setTimeout(() => { bar.style.transform = 'scaleY(1)'; }, index * 100);
                     });
                 }
             });
         }, observerOptions);
 
         const barsContainer = document.querySelector('.bars-container');
-        if (barsContainer) {
-            barObserver.observe(barsContainer);
-        }
+        if (barsContainer) { barObserver.observe(barsContainer); }
 
         // Smooth scroll for internal links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
             });
         });
     </script>
